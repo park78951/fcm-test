@@ -127,6 +127,7 @@ async function remove(req: NextApiRequest, res: NextApiResponse) {
     }
 
     tokenList = newTokenList;
+    res.status(201).json({ status: "success" });
   } catch (e: any) {
     console.dir(e);
 
