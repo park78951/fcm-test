@@ -5,9 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "dev:https": "ts-node server.ts",
-    "build": "next build && next export",
-    "buid:alpha": "next build",
-    "predeploy": "npm run build",
+    "build": "next build",
+    "predeploy": "next build && next export",
     "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles",
     "start": "next start",
     "lint": "next lint"
