@@ -12,7 +12,6 @@ const withPWA = require("next-pwa")({
 const nextConfig = withPWA({
   reactStrictMode: true,
   swcMinify: true,
-  basePath: "/fcm-test",
 });
 
 module.exports = nextConfig;
