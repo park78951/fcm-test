@@ -14,7 +14,7 @@ const serviceAccount = {
   type: "service_account",
   project_id: "dobo-fcm-test",
   private_key_id: process.env.PRIVATE_KEY_ID,
-  private_key: process.env.PRIVATE_KEY,
+  private_key: (process.env.PRIVATE_KEY as string).replace(/\\n/g, "\n"),
   client_email: "firebase-adminsdk-gp3lg@dobo-fcm-test.iam.gserviceaccount.com",
   client_id: process.env.CLIENT_ID,
   auth_uri: "https://accounts.google.com/o/oauth2/auth",
