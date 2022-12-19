@@ -6,9 +6,23 @@ import {
   Message,
 } from "firebase-admin/messaging";
 import { ServiceAccount } from "firebase-admin";
-import serviceAccount from "../../fcm/private-test-duncan.json";
+// import serviceAccount from "../../fcm/private-test-duncan.json";
 
 let tokenList: string[] = [];
+
+const serviceAccount = {
+  type: "service_account",
+  project_id: "dobo-fcm-test",
+  private_key_id: process.env.PRIVATE_KEY_ID,
+  private_key: process.env.PRIVATE_KEY,
+  client_email: "firebase-adminsdk-gp3lg@dobo-fcm-test.iam.gserviceaccount.com",
+  client_id: process.env.CLIENT_ID,
+  auth_uri: "https://accounts.google.com/o/oauth2/auth",
+  token_uri: "https://oauth2.googleapis.com/token",
+  auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
+  client_x509_cert_url:
+    "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-gp3lg%40dobo-fcm-test.iam.gserviceaccount.com",
+};
 
 fcm.initializeApp({
   credential: fcm.credential.cert(serviceAccount as ServiceAccount),
